@@ -5,91 +5,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Özür Dilerim Sevgilim</title>
     <style>
+        
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background-color: #ffe6f2;
-            margin: 0;
-            flex-direction: column;
-            animation: fadeIn 2s ease;
-        }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #ffe6f2;
+    margin: 0;
+    flex-direction: column;
+    animation: fadeIn 2s ease;
+}
 
-        h1 {
-            color: #ff4d6d;
-            font-size: 28px;
-            animation: bounce 2s infinite alternate;
-        }
+h1 {
+    color: #ff4d6d;
+    font-size: 28px;
+    animation: bounce 2s infinite alternate;
+}
 
-        .container {
-            margin-top: 20px;
-        }
+.container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row; /* Butonları yatayda hizalamak için */
+}
 
-        .button {
-            font-size: 20px;
-            padding: 12px 24px;
-            margin: 10px;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-        }
+.button {
+    font-size: 20px;
+    padding: 12px 24px;
+    margin: 10px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100px; /* Butonların genişliğini sabitlemek */
+}
 
-        #yesButton {
-            background-color: #ff66b2;
-            color: white;
-            position: relative;
-        }
+#yesButton {
+    background-color: #ff66b2;
+    color: white;
+    position: relative;
+}
 
-        #yesButton:hover {
-            background-color: #ff3385;
-            transform: rotate(15deg) scale(1.2);
-        }
+#yesButton:hover {
+    background-color: #ff3385;
+    transform: rotate(15deg) scale(1.2);
+}
 
-        #noButton {
-            background-color: #ff4d4d;
-            color: white;
-            position: absolute;
-        }
+#noButton {
+    background-color: #ff4d4d;
+    color: white;
+    position: relative; /* position: absolute yerine relative */
+}
 
-        #noButton:hover {
-            background-color: #ff3333;
-            transform: translateY(-10px) scale(1.1);
-        }
+#noButton:hover {
+    background-color: #ff3333;
+    transform: translateY(-10px) scale(1.1);
+}
 
+/* Animasyonlar */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
-        /* Animasyonlar */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 
-        @keyframes bounce {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-            100% {
-                transform: translateY(0);
-            }
-        }
+/* Mobil uyumlu stil: 600px'den küçük ekranlar için */
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 22px;
+    }
+
+    .button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .container {
+        flex-direction: column; /* Mobilde butonları dikey hizala */
+    }
+}
+
     </style>
 </head>
 <body>
 
-    <h1>seni üzdüğüm için özür dilerim sevgilim, barışalım mı?</h1>
+    <h1>Seni üzdüğüm için özür dilerim sevgilim, barışalım mı?</h1>
     
-    <div class="container">
+    <div class="container">     
         <button id="yesButton" class="button">💖 Evet 💖</button>
         <button id="noButton" class="button">❌ Hayır ❌</button>
     </div>
